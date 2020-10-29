@@ -1,0 +1,27 @@
+<h2>Child sending number of clicks to parent</h2>
+<h3>Child Cliked: {{numberOfClicks}}</h3>
+
+<app-child  (counter)="counterFn($event)" ></app-child>
+
+<h3>Pokemon</h3>
+<table id ="pokemon">
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Discription</th>
+        <th>Moves</th>
+    </tr>
+    <tr *ngFor="let pokemon of pokemonData" >
+        <td class="name">{{pokemon.name}}</td>
+        <td ><img [src]="pokemon.image" style="width:200px;height:200px;"></td>
+        <td> 
+            <table>
+                <tr *ngFor="let discri of pokemon.discription">
+                    <td>Abilities :{{discri.abilities}}</td>
+                    <td>Height : {{discri.height}}</td>
+                </tr>
+            </table>
+        </td>
+        <td>{{pokemon.moves}} </td>
+    </tr>
+</table>
